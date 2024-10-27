@@ -1,0 +1,35 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  position: string;
+  company: string;
+  message: string;
+  image: any;
+  imageAlt: string;
+}
+
+const { position, company, message, image, imageAlt } = Astro.props;
+---
+
+<article class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+  <aside class="rounded-md bg-background w-fit p-2 h-fit">
+    <Image
+      src={image}
+      alt={imageAlt}
+      width={48}
+      height={48}
+      class="rounded-md aspect-square object-contain"
+    />
+  </aside>
+  <div>
+    <header>
+      <h3 class="text-xl font-medium text-balance">
+        {position}
+        <strong class="font-bold text-2xl">{company}</strong>
+      </h3>
+    </header>
+    <p class="opacity-70">{message}</p>
+  </div>
+</article>

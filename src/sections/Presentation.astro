@@ -1,0 +1,79 @@
+---
+import Document from "../components/svg/Document.astro";
+import Github from "../components/svg/Github.astro";
+---
+
+<section
+  id="presentation"
+  class="fixed max-w-screen-lg inset-0 mx-auto min-h-screen flex justify-between items-center"
+>
+  <article class="flex flex-col gap-y-4">
+    <h1 class="text-9xl font-semibold">I'm Jared <br />Muñoz.</h1>
+    <p class="max-w-xl text-2xl">
+      <strong>React</strong> software developer, I love building things that make
+      people's stuff easier.
+    </p>
+  </article>
+  <aside class="flex flex-col items-end gap-y-4">
+    <div class="relative">
+      <div
+        id="cv-back"
+        class="grid place-content-center overflow-hidden text-background -z-10 rounded-full bg-accent-foreground w-14 h-14 absolute border-[1px] border-background right-0"
+      >
+        <span class="mr-10">Curriculum</span>
+      </div>
+      <button
+        id="cv-button"
+        class="bg-background hover:bg-accent rounded-full p-2 hover:text-accent-foreground transition-colors duration-300"
+      >
+        <Document class="w-10 h-10" />
+      </button>
+    </div>
+    <div class="relative">
+      <div
+        id="github-back"
+        class="grid place-content-center overflow-hidden text-background -z-10 rounded-full bg-accent-foreground w-14 h-14 absolute border-[1px] border-background right-0"
+      >
+        <span class="mr-10">Github</span>
+      </div>
+      <a
+        href="https://github.com/Jared-MB"
+        target="_blank"
+        id="github-button"
+        class="bg-background hover:bg-accent rounded-full p-2 hover:text-accent-foreground transition-colors duration-300 inline-block"
+      >
+        <Github class="w-10 h-10" />
+      </a>
+    </div>
+  </aside>
+</section>
+
+<script>
+  import { gsap } from "gsap";
+
+  const cvButton = document.getElementById("cv-button");
+  cvButton?.addEventListener("mouseenter", () => {
+    gsap.to("#cv-back", {
+      width: "15rem",
+    });
+  });
+
+  cvButton?.addEventListener("mouseleave", () => {
+    gsap.to("#cv-back", {
+      width: "3.5rem",
+    });
+  });
+
+  const githubButton = document.getElementById("github-button");
+  githubButton?.addEventListener("mouseenter", () => {
+    gsap.to("#github-back", {
+      width: "15rem",
+    });
+  });
+
+  githubButton?.addEventListener("mouseleave", () => {
+    gsap.to("#github-back", {
+      width: "3.5rem",
+    });
+  });
+</script>
