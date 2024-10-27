@@ -1,6 +1,7 @@
 ---
 import Document from "../components/svg/Document.astro";
 import Github from "../components/svg/Github.astro";
+import pdf from "../assets/Jared_Muñoz-CV.pdf";
 ---
 
 <section
@@ -22,12 +23,14 @@ import Github from "../components/svg/Github.astro";
       >
         <span class="mr-10">Curriculum</span>
       </div>
-      <button
+      <a
+        href={pdf}
+        download="Jared_Muñoz-CV.pdf"
         id="cv-button"
-        class="bg-background hover:bg-accent rounded-full p-2 hover:text-accent-foreground transition-colors duration-300"
+        class="bg-background hover:bg-accent rounded-full p-2 hover:text-accent-foreground transition-colors duration-300 inline-block"
       >
         <Document class="w-10 h-10" />
-      </button>
+      </a>
     </div>
     <div class="relative">
       <div
