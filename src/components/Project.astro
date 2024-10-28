@@ -1,0 +1,60 @@
+---
+import { Image } from "astro:assets";
+import Badge from "./Badge.astro";
+
+interface Props {
+  title: string;
+  images: [{ src: string; alt: string }, { src: string; alt: string }];
+  description: string;
+  badges: string[];
+  link: string;
+}
+
+const { images, badges, description, link, title } = Astro.props;
+---
+
+<article class="flex flex-col gap-y-8">
+  <header
+    class="flex flex-col lg:flex-row justify-between lg:items-center gap-y-4"
+  >
+    <div class="flex gap-x-4 items-center">
+      <Image
+        src="/kristall.webp"
+        alt="Kristall logo"
+        width={42}
+        height={42}
+        class="rounded-full aspect-square object-contain"
+      />
+      <h3 class="text-4xl font-medium">{title}</h3>
+    </div>
+    <p class="max-w-md opacity-70 text-lg">
+      {description}
+    </p>
+  </header>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-y-8 gap-x-8">
+    <Image
+      src={images[0].src}
+      alt={images[0].alt}
+      width={1867}
+      height={985}
+      class="aspect-[1867/985] rounded-lg"
+    />
+    <Image
+      src={images[1].src}
+      alt={images[1].alt}
+      width={1867}
+      height={985}
+      class="aspect-[1867/985] rounded-lg"
+    />
+  </div>
+  <footer
+    class="flex flex-col lg:flex-row gap-y-6 items-end lg:items-start lg:justify-between"
+  >
+    <div
+      class="max-w-screen-sm flex flex-wrap justify-evenly lg:justify-start gap-x-4 gap-y-2"
+    >
+      {badges.map((badge) => <Badge>{badge}</Badge>)}
+    </div>
+    <a href={link} target="_blank" class="hover:underline">Ver proyecto</a>
+  </footer>
+</article>

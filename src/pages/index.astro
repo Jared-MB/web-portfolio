@@ -8,16 +8,17 @@ import Badge from "../components/Badge.astro";
 import OpenSource from "../components/svg/OpenSource.svg";
 import WebSite from "../components/svg/WebSite.svg";
 import { Image } from "astro:assets";
+import Project from "../components/Project.astro";
 ---
 
 <Layout title="Jared Muñoz | Portfolio">
   <main>
     <Presentation />
-    <div class="relative top-[100dvh] min-h-[320dvh]">
+    <div class="relative top-[100dvh] min-h-[375dvh] lg:min-h-[320dvh]">
       <div class="absolute w-full z-20">
         <div class="bg-input h-dvh flex justify-center">
           <div
-            class="max-w-screen-lg mx-auto w-full place-content-center grid grid-cols-2 gap-x-16"
+            class="max-w-screen-lg mx-auto px-8 lg:px-0 w-full place-content-center grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12"
           >
             <section class="flex flex-col gap-y-8">
               <h2 class="text-3xl font-medium">Working Experience</h2>
@@ -70,160 +71,73 @@ import { Image } from "astro:assets";
       <div
         class="sticky top-0 z-10 bg-background min-h-dvh grid place-content-center py-32"
       >
-        <section class="max-w-screen-lg mx-auto flex flex-col gap-y-16">
-          <article class="flex flex-col gap-y-8">
-            <header class="flex justify-between items-center">
-              <div class="flex gap-x-4 items-center">
-                <Image
-                  src="/kristall.webp"
-                  alt="Kristall logo"
-                  width={42}
-                  height={42}
-                  class="rounded-full aspect-square object-contain"
-                />
-                <h3 class="text-4xl font-medium">Kristall</h3>
-              </div>
-              <p class="max-w-md opacity-70 text-lg">
-                A full system for entrepreneurs to manage their businesses
-                including clients, expenses, orders, products, and more.
-              </p>
-            </header>
-            <div class="grid grid-cols-2 gap-x-8">
-              <Image
-                src="/kristall-landing.avif"
-                alt="Kristall Landing Page"
-                width={1867}
-                height={985}
-                class="aspect-[1867/985] rounded-lg"
-              />
-              <Image
-                src="/kristall-dashboard.avif"
-                alt="Kristall Dashboard Page"
-                width={1867}
-                height={985}
-                class="aspect-[1867/985] rounded-lg"
-              />
-            </div>
-            <footer class="flex justify-between">
-              <div class="max-w-screen-sm flex flex-wrap gap-x-4 gap-y-2">
-                <Badge> NextJS </Badge>
-                <Badge> TailwindCSS </Badge>
-                <Badge> PostgreSQL </Badge>
-                <Badge> React </Badge>
-                <Badge> TypeScript </Badge>
-                <Badge> Stripe </Badge>
-                <Badge> NestJS </Badge>
-                <Badge> Cloudflare R2 </Badge>
-              </div>
-              <a
-                href="https://kristall.app"
-                target="_blank"
-                class="hover:underline">Ver proyecto</a
-              >
-            </footer>
-          </article>
-          <article class="flex flex-col gap-y-8">
-            <header class="flex justify-between items-center">
-              <div class="flex gap-x-4 items-center">
-                <Image
-                  src={WebSite}
-                  alt="Website image"
-                  width={42}
-                  height={42}
-                  class="rounded-full aspect-square object-contain"
-                />
-                <h3 class="text-4xl font-medium">AreWePlaying?</h3>
-              </div>
-              <p class="max-w-md opacity-70 text-lg">
-                A website that allows BUAP students to find univerity sport
-                matches between other universities. <small
-                  >(Under development)</small
-                >
-              </p>
-            </header>
-            <div class="grid grid-cols-2 gap-x-8">
-              <Image
-                src="/are-we-playing.avif"
-                alt="AreWePlaying main page"
-                width={1867}
-                height={985}
-                class="aspect-[1867/985] rounded-lg"
-              />
-              <Image
-                src="/are-we-playing-login.avif"
-                alt="AreWePlaying login page"
-                width={1867}
-                height={985}
-                class="aspect-[1867/985] rounded-lg"
-              />
-            </div>
-            <footer class="flex justify-between">
-              <div class="max-w-screen-sm flex flex-wrap gap-x-4 gap-y-2">
-                <Badge> NextJS </Badge>
-                <Badge> TailwindCSS </Badge>
-                <Badge> PostgreSQL </Badge>
-                <Badge> React </Badge>
-                <Badge> TypeScript </Badge>
-                <Badge> NestJS </Badge>
-                <Badge> Cloudflare R2 </Badge>
-              </div>
-              <a
-                href="https://are-we-playing.vercel.app/"
-                target="_blank"
-                class="hover:underline">Ver proyecto</a
-              >
-            </footer>
-          </article>
-          <article class="flex flex-col gap-y-8">
-            <header class="flex justify-between items-center">
-              <div class="flex gap-x-4 items-center">
-                <Image
-                  src={WebSite}
-                  alt="Website image"
-                  width={42}
-                  height={42}
-                  class="rounded-full aspect-square object-contain"
-                />
-                <h3 class="text-4xl font-medium">RoomMate</h3>
-              </div>
-              <p class="max-w-md opacity-70 text-lg">
-                A website that allows students to search rooms and apartments
-                near university campuses. <small>(Not operational)</small>
-              </p>
-            </header>
-            <div class="grid grid-cols-2 gap-x-8">
-              <Image
-                src="/roommate.avif"
-                alt="RoomMate main page"
-                width={1867}
-                height={985}
-                class="aspect-[1867/985] rounded-lg"
-              />
-              <Image
-                src="/roommate-upload.avif"
-                alt="RoomMate upload apartment page"
-                width={1867}
-                height={985}
-                class="aspect-[1867/985] rounded-lg"
-              />
-            </div>
-            <footer class="flex justify-between">
-              <div class="max-w-screen-sm flex flex-wrap gap-x-4 gap-y-2">
-                <Badge> Angular </Badge>
-                <Badge> TailwindCSS </Badge>
-                <Badge> PostgreSQL </Badge>
-                <Badge> NestJS </Badge>
-                <Badge> TypeScript </Badge>
-                <Badge> Google Maps API </Badge>
-                <Badge> Cloudflare R2 </Badge>
-              </div>
-              <a
-                href="https://room-mate-gamma.vercel.app/"
-                target="_blank"
-                class="hover:underline">Ver proyecto</a
-              >
-            </footer>
-          </article>
+        <section
+          class="max-w-screen-lg mx-auto flex flex-col gap-y-16 px-8 lg:px-0"
+        >
+          <Project
+            title="Kristall"
+            images={[
+              { src: "/kristall-landing.avif", alt: "Kristall Landing Page" },
+              {
+                src: "/kristall-dashboard.avif",
+                alt: "Kristall Dashboard Page",
+              },
+            ]}
+            description="A full system for entrepreneurs to manage their businesses including clients, expenses, orders, products, and more."
+            badges={[
+              "NextJS",
+              "TailwindCSS",
+              "PostgreSQL",
+              "React",
+              "TypeScript",
+              "Stripe",
+              "NestJS",
+              "Cloudflare R2",
+            ]}
+            link="https://kristall.app"
+          />
+          <Project
+            title="AreWePlaying?"
+            images={[
+              { src: "/are-we-playing.avif", alt: "AreWePlaying main page" },
+              {
+                src: "/are-we-playing-login.avif",
+                alt: "AreWePlaying login page",
+              },
+            ]}
+            description="A website that allows BUAP students to find univerity sport matches between other universities."
+            badges={[
+              "NextJS",
+              "TailwindCSS",
+              "PostgreSQL",
+              "React",
+              "TypeScript",
+              "NestJS",
+              "Cloudflare R2",
+            ]}
+            link="https://are-we-playing.vercel.app/"
+          />
+          <Project
+            title="RoomMate"
+            images={[
+              { src: "/roommate.avif", alt: "RoomMate main page" },
+              {
+                src: "/roommate-upload.avif",
+                alt: "RoomMate upload apartment page",
+              },
+            ]}
+            description="A website that allows students to search rooms and apartments near university campuses."
+            badges={[
+              "Angular",
+              "TailwindCSS",
+              "PostgreSQL",
+              "NestJS",
+              "TypeScript",
+              "Google Maps API",
+              "Cloudflare R2",
+            ]}
+            link="https://room-mate-gamma.vercel.app/"
+          />
         </section>
       </div>
     </div>
