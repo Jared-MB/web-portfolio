@@ -14,9 +14,12 @@ import Svgl from "../components/svg/Svgl.svg";
 <Layout title="Jared Muñoz | Portfolio">
   <main>
     <Presentation />
-    <div class="relative top-[100dvh] min-h-[375dvh] lg:min-h-[320dvh]">
+    <div class="relative top-[100dvh] lg:min-h-[320dvh]">
       <div class="absolute w-full z-20">
-        <div class="bg-input h-dvh flex justify-center">
+        <div
+          id="experience"
+          class="bg-input min-h-[100dvh] py-16 md:p-0 flex justify-center"
+        >
           <div
             class="max-w-screen-lg mx-auto px-8 lg:px-0 w-full place-content-center grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12"
           >
@@ -94,6 +97,7 @@ import Svgl from "../components/svg/Svgl.svg";
         </div>
       </div>
       <div
+        id="projects"
         class="sticky top-0 z-10 bg-background min-h-dvh grid place-content-center py-32"
       >
         <section
@@ -168,3 +172,25 @@ import Svgl from "../components/svg/Svgl.svg";
     </div>
   </main>
 </Layout>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const screenHeight = window.innerHeight;
+    const screenWidth = window.innerWidth;
+
+    if (screenWidth >= 640) {
+      return;
+    }
+
+    const experience = document.getElementById("experience");
+    const projects = document.getElementById("projects");
+
+    if (!experience || !projects) return;
+
+    const experienceHeight = experience.offsetHeight;
+
+    const heigthDifference = screenHeight + (experienceHeight - screenHeight);
+
+    projects.style.paddingTop = `${heigthDifference + 64}px`;
+  });
+</script>
