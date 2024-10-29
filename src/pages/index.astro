@@ -7,6 +7,8 @@ import Experience from "../components/Experience.astro";
 import OpenSource from "../components/svg/OpenSource.svg";
 import WebSite from "../components/svg/WebSite.svg";
 import Project from "../components/Project.astro";
+import Contribution from "../components/Contribution.astro";
+import Svgl from "../components/svg/Svgl.svg";
 ---
 
 <Layout title="Jared Muñoz | Portfolio">
@@ -47,17 +49,42 @@ import Project from "../components/Project.astro";
             <section class="flex flex-col gap-y-8">
               <h2 class="text-3xl font-medium">Open Source Contributions</h2>
               <div class="flex flex-col gap-y-8">
-                <Experience
-                  position="Contributor at"
-                  company="Hangman_Frontend by @Isa-hi"
-                  message="October 2024"
+                <Contribution
+                  repo={{
+                    name: "svgl",
+                    url: new URL("https://github.com/pheralb/svgl"),
+                  }}
+                  user={{
+                    name: "pheralb",
+                    url: new URL("https://github.com/pheralb"),
+                  }}
+                  date="October 2024"
+                  image={Svgl}
+                  imageAlt="Open source image"
+                />
+                <Contribution
+                  repo={{
+                    name: "Hangman_Frontend",
+                    url: new URL("https://github.com/Isa-hi/Hangman_Frontend"),
+                  }}
+                  user={{
+                    name: "Isa-hi",
+                    url: new URL("https://github.com/Isa-hi"),
+                  }}
+                  date="October 2024"
                   image={OpenSource}
                   imageAlt="Open source image"
                 />
-                <Experience
-                  position="Contributor at"
-                  company="miduconf-website by @midudev"
-                  message="August 2024"
+                <Contribution
+                  repo={{
+                    name: "miduconf-website",
+                    url: new URL("https://github.com/midudev/miduconf-website"),
+                  }}
+                  user={{
+                    name: "midudev",
+                    url: new URL("https://github.com/midudev"),
+                  }}
+                  date="August 2024"
                   image={OpenSource}
                   imageAlt="Open source image"
                 />
