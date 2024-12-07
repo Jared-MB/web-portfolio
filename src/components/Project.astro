@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Badge from "./Badge.astro";
+import Github from "./svg/Github.astro";
 
 interface Props {
   title: string;
@@ -8,9 +9,10 @@ interface Props {
   description: string;
   badges: string[];
   link: string;
+  github?: string;
 }
 
-const { images, badges, description, link, title } = Astro.props;
+const { images, badges, description, link, title, github } = Astro.props;
 ---
 
 <article class="flex flex-col gap-y-8">
@@ -55,6 +57,15 @@ const { images, badges, description, link, title } = Astro.props;
     >
       {badges.map((badge) => <Badge>{badge}</Badge>)}
     </div>
-    <a href={link} target="_blank" class="hover:underline"> Go to website </a>
+    <div class="flex gap-x-4 items-center">
+      <a href={link} target="_blank" class="hover:underline"> Go to website </a>
+      {
+        github && (
+          <a href={github} target="_blank">
+            <Github class="w-6 h-6" />
+          </a>
+        )
+      }
+    </div>
   </footer>
 </article>
