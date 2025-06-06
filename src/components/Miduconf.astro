@@ -1,0 +1,67 @@
+---
+import { Image } from "astro:assets";
+
+import { GitPullRequest, ExternalLink } from '@lucide/astro'
+// @ts-ignore
+import Midudev from "../components/svg/Midudev.svg";
+---
+
+<article class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+    <aside class="rounded-md bg-background w-fit p-2 h-fit">
+      <Image
+        src={Midudev as any}
+        alt='Miduconf logo'
+        width={48}
+        height={48}
+        class="rounded-md aspect-square object-contain"
+      />
+    </aside>
+    <div class="flex-1">
+        <header class="flex items-center gap-2">
+          <h3 class="text-xl font-medium text-balance grid">
+            <span>Minor Contributor at </span>
+            <strong class="font-bold text-2xl hover:underline">
+                <a href="https://www.miduconf.com/" target="_blank" rel="noopener noreferrer">Miduconf Website</a>
+            </strong>
+          </h3>
+          <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-xs bg-green-50 text-green-700 border-green-200">
+            <GitPullRequest class="w-3 h-3 mr-1" />
+            merged
+          </div>
+        </header>
+        <p class="text-gray-600 text-sm mb-2">
+            by 
+            <a href="https://github.com/midudev" target="_blank" rel="noopener noreferrer" class="hover:underline">
+                @midudev
+            </a>
+        </p>
+        <p class="opacity-70">August 2024</p>
+        <div class="flex flex-col gap-1 mt-3">
+            <a
+              href="https://github.com/midudev/miduconf-website/pull/158"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+            >
+              <GitPullRequest class="w-4 h-4" />
+              <span class="font-medium">View merged PR</span>
+              <ExternalLink class="w-3 h-3" />
+            </a>
+            <p class="text-xs text-gray-500 mt-1 italic">"Add target _blank for discord link"</p>
+        </div>
+        <div class="flex flex-col gap-1 mt-3">
+            <a
+              href="https://github.com/midudev/miduconf-website/pull/164"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-2 text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+            >
+              <GitPullRequest class="w-4 h-4" />
+              <span class="font-medium">View merged PR</span>
+              <ExternalLink class="w-3 h-3" />
+            </a>
+            <p class="text-xs text-gray-500 mt-1 italic">"Add padding top to timezone"</p>
+        </div>
+      </div>
+  </article>
+  

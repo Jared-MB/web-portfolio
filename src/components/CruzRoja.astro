@@ -1,0 +1,45 @@
+---
+import { Image } from "astro:assets";
+
+import { Award, Download } from '@lucide/astro'
+---
+
+<article class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+    <aside class="rounded-md bg-background w-fit p-2 h-fit">
+        <Image
+        src="/cruz-roja.avif"
+        alt="Cruz Roja Mexicana"
+        width={48}
+        height={48}
+        class="rounded-md aspect-square object-contain"
+        />
+    </aside>
+    <div class="flex flex-col gap-y-2">
+        <header>
+            <h3 class="text-xl font-medium text-balance">
+                Software Developer (Volunteer) at
+                <strong class="font-bold text-2xl">Cruz Roja Mexicana</strong>
+            </h3>
+        </header>
+        <p class="opacity-70">November 2024 - June 2025</p>
+        <div class="mt-3 p-3 bg-amber-50 rounded-lg border border-amber-200">
+            <div class="flex items-center gap-2 mb-2">
+              <Award class="w-5 h-5 text-amber-600" />
+              <span class=" font-medium text-amber-800">Certified</span>
+            </div>
+            <p class="text-sm text-amber-700 mb-2">Volunteer Service Certificate</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs text-amber-600">Issued: June 2025</span>
+              <a
+                href='https://jared-mb.kristall.app/ServiceCertificate.pdf'
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-xs text-amber-700 hover:text-amber-900 hover:underline"
+              >
+                <Download class="w-3 h-3" />
+                View Certificate
+              </a>
+            </div>
+        </div>
+    </div>
+</article>

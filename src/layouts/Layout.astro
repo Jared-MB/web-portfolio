@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/manrope";
 const { title } = Astro.props;
+
+import '../styles/global.css';
 ---
 
 <html lang="en">
@@ -14,73 +16,3 @@ const { title } = Astro.props;
     <slot />
   </body>
 </html>
-
-<style>
-  @tailwind base;
-
-  @layer base {
-    :root {
-      --background: 60 30% 95%;
-      --foreground: 30 10% 20%;
-      --card: 60 20% 90%;
-      --card-foreground: 30 10% 25%;
-      --popover: 60 20% 95%;
-      --popover-foreground: 30 15% 15%;
-      --primary: 45 70% 60%;
-      --primary-foreground: 30 10% 10%;
-      --secondary: 30 20% 80%;
-      --secondary-foreground: 30 10% 20%;
-      --muted: 60 10% 85%;
-      --muted-foreground: 30 10% 15%;
-      --accent: 50 70% 75%;
-      --accent-foreground: 30 10% 15%;
-      --destructive: 0 80% 60%;
-      --destructive-foreground: 0 10% 95%;
-      --border: 30 20% 70%;
-      --input: 60 20% 98%;
-      --ring: 45 70% 50%;
-      --chart1: 45 70% 70%;
-      --chart2: 30 30% 60%;
-      --chart3: 60 30% 80%;
-      --chart4: 50 60% 65%;
-      --chart5: 0 80% 50%;
-
-      --radius: 0.5rem;
-    }
-
-    .dark {
-      --background: 60 10% 15%;
-      --foreground: 30 20% 90%;
-      --card: 60 10% 20%;
-      --card-foreground: 30 20% 85%;
-      --popover: 60 10% 25%;
-      --popover-foreground: 30 20% 90%;
-      --primary: 45 70% 50%;
-      --primary-foreground: 30 20% 95%;
-      --secondary: 30 10% 30%;
-      --secondary-foreground: 30 20% 90%;
-      --muted: 60 20% 20%;
-      --muted-foreground: 30 20% 85%;
-      --accent: 50 70% 50%;
-      --accent-foreground: 30 20% 95%;
-      --destructive: 0 80% 40%;
-      --destructive-foreground: 0 10% 15%;
-      --border: 30 20% 40%;
-      --input: 60 10% 20%;
-      --ring: 45 70% 60%;
-      --chart1: 45 70% 50%;
-      --chart2: 30 20% 80%;
-      --chart3: 60 20% 45%;
-      --chart4: 50 70% 55%;
-      --chart5: 0 70% 40%;
-    }
-  }
-
-  body {
-    font-family: "Manrope Variable", sans-serif;
-  }
-
-  p {
-    text-wrap: pretty;
-  }
-</style>

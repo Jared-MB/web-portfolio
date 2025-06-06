@@ -1,0 +1,26 @@
+---
+import { Image } from "astro:assets";
+---
+
+<article class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-2">
+    <aside class="rounded-md bg-background w-fit p-2 h-fit">
+        <Image
+        src="/kristall.webp"
+        alt="Kristall logo"
+        width={48}
+        height={48}
+        class="rounded-md aspect-square object-contain"
+        />
+    </aside>
+    <div class="flex flex-col gap-y-2">
+        <header>
+            <h3 class="text-xl font-medium text-balance">
+                Software Developer at
+                <strong class="font-bold text-2xl hover:underline">
+                    <a href="https://kristall.app" target="_blank" rel="noopener noreferrer">Kristall</a>
+                </strong>
+            </h3>
+        </header>
+        <p class="opacity-70">March 2023 - Present</p>
+    </div>
+</article>

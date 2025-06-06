@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: 60 30% 95%;
+  --foreground: 30 10% 20%;
+  --card: 60 20% 90%;
+  --card-foreground: 30 10% 25%;
+  --popover: 60 20% 95%;
+  --popover-foreground: 30 15% 15%;
+  --primary: 45 70% 60%;
+  --primary-foreground: 30 10% 10%;
+  --secondary: 30 20% 80%;
+  --secondary-foreground: 30 10% 20%;
+  --muted: 60 10% 85%;
+  --muted-foreground: 30 10% 15%;
+  --accent: 50 70% 75%;
+  --accent-foreground: 30 10% 15%;
+  --destructive: 0 80% 60%;
+  --destructive-foreground: 0 10% 95%;
+  --border: 30 20% 70%;
+  --input: 60 20% 98%;
+  --ring: 45 70% 50%;
+  --chart1: 45 70% 70%;
+  --chart2: 30 30% 60%;
+  --chart3: 60 30% 80%;
+  --chart4: 50 60% 65%;
+  --chart5: 0 80% 50%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 60 10% 15%;
+  --foreground: 30 20% 90%;
+  --card: 60 10% 20%;
+  --card-foreground: 30 20% 85%;
+  --popover: 60 10% 25%;
+  --popover-foreground: 30 20% 90%;
+  --primary: 45 70% 50%;
+  --primary-foreground: 30 20% 95%;
+  --secondary: 30 10% 30%;
+  --secondary-foreground: 30 20% 90%;
+  --muted: 60 20% 20%;
+  --muted-foreground: 30 20% 85%;
+  --accent: 50 70% 50%;
+  --accent-foreground: 30 20% 95%;
+  --destructive: 0 80% 40%;
+  --destructive-foreground: 0 10% 15%;
+  --border: 30 20% 40%;
+  --input: 60 10% 20%;
+  --ring: 45 70% 60%;
+  --chart1: 45 70% 50%;
+  --chart2: 30 20% 80%;
+  --chart3: 60 20% 45%;
+  --chart4: 50 70% 55%;
+  --chart5: 0 70% 40%;
+}
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-chart-1: hsl(var(--chart-1));
+  --color-chart-2: hsl(var(--chart-2));
+  --color-chart-3: hsl(var(--chart-3));
+  --color-chart-4: hsl(var(--chart-4));
+  --color-chart-5: hsl(var(--chart-5));
+  --color-sidebar: hsl(var(--sidebar));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+}
+
+body {
+  font-family: "Manrope Variable", sans-serif;
+}
+
+p {
+  text-wrap: pretty;
+}

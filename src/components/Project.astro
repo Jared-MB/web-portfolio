@@ -10,9 +10,13 @@ interface Props {
   badges: string[];
   link: string;
   github?: string;
+  favicon?: {
+    src: string;
+    alt: string;
+  };
 }
 
-const { images, badges, description, link, title, github } = Astro.props;
+const { images, badges, description, link, title, github, favicon } = Astro.props;
 ---
 
 <article class="flex flex-col gap-y-8">
@@ -21,8 +25,8 @@ const { images, badges, description, link, title, github } = Astro.props;
   >
     <div class="flex gap-x-4 items-center">
       <Image
-        src="/kristall.webp"
-        alt="Kristall logo"
+        src={favicon?.src ?? '/'}
+        alt={favicon?.alt ?? ''}
         width={42}
         height={42}
         class="rounded-full aspect-square object-contain"

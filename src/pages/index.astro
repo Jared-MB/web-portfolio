@@ -2,13 +2,12 @@
 import Layout from "../layouts/Layout.astro";
 
 import Presentation from "../sections/Presentation.astro";
-import Experience from "../components/Experience.astro";
 
-import OpenSource from "../components/svg/OpenSource.svg";
-import WebSite from "../components/svg/WebSite.svg";
 import Project from "../components/Project.astro";
-import Contribution from "../components/Contribution.astro";
-import Svgl from "../components/svg/Svgl.svg";
+import CruzRoja from "../components/CruzRoja.astro";
+import Kristall from "../components/Kristall.astro";
+import Svgl from "../components/Svgl.astro";
+import Miduconf from "../components/Miduconf.astro";
 ---
 
 <Layout title="Jared Muñoz | Portfolio">
@@ -26,71 +25,15 @@ import Svgl from "../components/svg/Svgl.svg";
             <section class="flex flex-col gap-y-8">
               <h2 class="text-3xl font-medium">Working Experience</h2>
               <div class="flex flex-col gap-y-8">
-                <Experience
-                  position="Software Developer (Volunteer) at"
-                  company="Cruz Roja Mexicana"
-                  message="November 2024 - Present"
-                  image="/cruz-roja.avif"
-                  imageAlt="Cruz Roja Mexicana logo"
-                />
-                <Experience
-                  position="Software Developer at"
-                  company="Kristall"
-                  message="March 2023 - Present"
-                  image="/kristall.webp"
-                  imageAlt="Kristall logo"
-                />
-                <Experience
-                  position="Freelance at"
-                  company="AreWePlaying"
-                  message="August - December 2024"
-                  image={WebSite}
-                  imageAlt="Website image"
-                />
+                <CruzRoja />
+                <Kristall />
               </div>
             </section>
             <section class="flex flex-col gap-y-8">
               <h2 class="text-3xl font-medium">Open Source Contributions</h2>
               <div class="flex flex-col gap-y-8">
-                <Contribution
-                  repo={{
-                    name: "svgl",
-                    url: new URL("https://github.com/pheralb/svgl"),
-                  }}
-                  user={{
-                    name: "pheralb",
-                    url: new URL("https://github.com/pheralb"),
-                  }}
-                  date="October 2024"
-                  image={Svgl}
-                  imageAlt="Open source image"
-                />
-                <Contribution
-                  repo={{
-                    name: "Hangman_Frontend",
-                    url: new URL("https://github.com/Isa-hi/Hangman_Frontend"),
-                  }}
-                  user={{
-                    name: "Isa-hi",
-                    url: new URL("https://github.com/Isa-hi"),
-                  }}
-                  date="October 2024"
-                  image={OpenSource}
-                  imageAlt="Open source image"
-                />
-                <Contribution
-                  repo={{
-                    name: "miduconf-website",
-                    url: new URL("https://github.com/midudev/miduconf-website"),
-                  }}
-                  user={{
-                    name: "midudev",
-                    url: new URL("https://github.com/midudev"),
-                  }}
-                  date="August 2024"
-                  image={OpenSource}
-                  imageAlt="Open source image"
-                />
+                <Svgl/>
+                <Miduconf/>
               </div>
             </section>
           </div>
@@ -105,6 +48,10 @@ import Svgl from "../components/svg/Svgl.svg";
         >
           <Project
             title="Kristall"
+            favicon={{
+              src: "/kristall.webp",
+              alt: "Kristall logo",
+            }}
             images={[
               { src: "/kristall-landing.avif", alt: "Kristall Landing Page" },
               {
@@ -112,7 +59,7 @@ import Svgl from "../components/svg/Svgl.svg";
                 alt: "Kristall Dashboard Page",
               },
             ]}
-            description="A full system for entrepreneurs to manage their businesses including clients, expenses, orders, products, and more."
+            description="Multi-tenant SaaS for entrepreneurs to manage their businesses including clients, expenses, orders, products, and more."
             badges={[
               "NextJS",
               "TailwindCSS",
@@ -126,15 +73,19 @@ import Svgl from "../components/svg/Svgl.svg";
             link="https://kristall.app"
           />
           <Project
-            title="AreWePlaying?"
+            title="OpenJS Chat"
+            favicon={{
+              src: "/openjs-chat.webp",
+              alt: "OpenJS Chat",
+            }}
             images={[
-              { src: "/are-we-playing.avif", alt: "AreWePlaying main page" },
+              { src: "/openjs-chat.avif", alt: "AreWePlaying main page" },
               {
-                src: "/are-we-playing-login.avif",
+                src: "/openjs-chat-login.avif",
                 alt: "AreWePlaying login page",
               },
             ]}
-            description="A website that allows BUAP students to find univerity sport matches between other universities."
+            description="An Open Source Realtime Chat App built with NextJS and NestJS. It allows users to chat with each others, send friends requests, and create groups."
             badges={[
               "NextJS",
               "TailwindCSS",
@@ -142,10 +93,11 @@ import Svgl from "../components/svg/Svgl.svg";
               "React",
               "TypeScript",
               "NestJS",
-              "Cloudflare R2",
+              "WebSockets",
+              "Drizzle"
             ]}
-            link="https://are-we-playing.vercel.app/"
-            github="https://github.com/Jared-MB/AreWePlaying"
+            link="https://open-js-chat.vercel.app/"
+            github="https://github.com/Jared-MB/open-js-chat"
           />
         </section>
       </div>
