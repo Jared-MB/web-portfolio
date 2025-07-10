@@ -1,5 +1,5 @@
 ---
-import { Copy, ExternalLink, Github, Package, TrendingUp } from "@lucide/astro";
+import { Book, Copy, ExternalLink, Github, Package } from "@lucide/astro";
 import Badge from "../components/Badge.astro";
 
 const npmPackages = [
@@ -9,6 +9,7 @@ const npmPackages = [
       "A utility library for handling http request with TypeScript and NextJS cache support",
     version: "1.1.2",
     npmUrl: "https://www.npmjs.com/package/@kristall/nexum",
+    docs: null,
     githubUrl: "https://github.com/Jared-MB/nexum",
     tags: ["typescript", "http", "cache"],
     publishDate: "June 2025",
@@ -20,6 +21,7 @@ const npmPackages = [
       "React library to create dynamic and interactive presentations",
     version: "1.0.1",
     npmUrl: "https://www.npmjs.com/package/presivio",
+    docs: "https://presivio.vercel.app",
     githubUrl: "https://github.com/Jared-MB/react-slides",
     tags: ["react", "typescript", "next"],
     publishDate: "July 2025",
@@ -86,6 +88,18 @@ const npmPackages = [
 
                 {/* Links */}
                 <div class="flex items-center gap-4">
+                  {pkg.docs && (
+                    <a
+                      href={pkg.docs}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="inline-flex items-center gap-1 text-sm text-blue-600 hover:text-blue-800 hover:underline transition-colors"
+                    >
+                      <Book class="w-4 h-4" />
+                      <span>Docs</span>
+                      <ExternalLink class="w-3 h-3" />
+                    </a>
+                  )}
                   <a
                     href={pkg.npmUrl}
                     target="_blank"
