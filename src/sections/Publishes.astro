@@ -3,6 +3,19 @@ import { Book, Copy, ExternalLink, Github, Package } from "@lucide/astro";
 import Badge from "../components/Badge.astro";
 
 const npmPackages = [
+    {
+    name: "@cruzrojapuebla/plasma",
+    description:
+      "A minimal, type-safe HTTP client for TypeScript. Built to simplify API requests with a focus on performance and developer experience.",
+    version: "1.0.0",
+    npmUrl: "https://www.npmjs.com/package/@cruzrojapuebla/plasma",
+    docs: "https://plasma-docs-six.vercel.app/",
+    githubUrl: "https://github.com/Cruz-Roja-sistemas/plasma",
+    tags: ["typescript", "http"],
+    publishDate: "April 2026",
+    logo: "📦",
+    deprecated: false,
+  },
   {
     name: "suspense-fallback-debugger",
     description:
@@ -14,6 +27,7 @@ const npmPackages = [
     tags: ["typescript", "react", "suspense", "devtools"],
     publishDate: "October 2025",
     logo: "⚛️",
+    deprecated: false,
   },
   {
     name: "@kristall/nexum",
@@ -26,24 +40,13 @@ const npmPackages = [
     tags: ["typescript", "http", "cache"],
     publishDate: "June 2025",
     logo: "📦",
-  },
-  {
-    name: "presivio",
-    description:
-      "React library to create dynamic and interactive presentations",
-    version: "1.0.1",
-    npmUrl: "https://www.npmjs.com/package/presivio",
-    docs: "https://presivio.vercel.app",
-    githubUrl: "https://github.com/Jared-MB/react-slides",
-    tags: ["react", "typescript", "next"],
-    publishDate: "July 2025",
-    logo: "⚛️",
+    deprecated: true,
   },
 ];
 ---
 
 <section
-  class="max-w-screen-lg mx-auto flex flex-col gap-y-16 px-8 lg:px-0 pt-20"
+  class="max-w-5xl mx-auto flex flex-col gap-y-16 px-8 lg:px-0 pt-20"
 >
   <h2 class="text-4xl font-medium">NPM Packages</h2>
   <div class="grid md:grid-cols-2 gap-6">
@@ -64,6 +67,16 @@ const npmPackages = [
                   >
                     v{pkg.version}
                   </Badge>
+                  {
+                    pkg.deprecated && (
+                      <Badge
+                        variant="outline"
+                        class="text-xs font-bold bg-red-50 text-red-700 border-red-200"
+                      >
+                        @deprecated
+                      </Badge>
+                    )
+                  }
                 </div>
 
                 <p class="text-gray-600 text-sm mb-3">{pkg.description}</p>

@@ -5,6 +5,7 @@ import Presentation from "../sections/Presentation.astro";
 
 import CruzRoja from "../components/CruzRoja.astro";
 import Kristall from "../components/Kristall.astro";
+import Plasma from "../components/Plasma.astro";
 import Svgl from "../components/Svgl.astro";
 import Projects from "../sections/Projects.astro";
 import SuspenseFallbackDebugger from "../components/SuspenseFallbackDebugger.astro";
@@ -13,55 +14,32 @@ import SuspenseFallbackDebugger from "../components/SuspenseFallbackDebugger.ast
 <Layout title="Jared Muñoz | Portfolio">
   <main>
     <Presentation />
-    <div class="relative top-[100dvh] lg:min-h-[380dvh]">
-      <div class="absolute w-full z-20">
+    <div class="relative top-[100dvh]">
+      <div
+        id="experience"
+        class="relative z-20 bg-input min-h-dvh py-16 md:p-0 flex justify-center"
+      >
         <div
-          id="experience"
-          class="bg-input min-h-[100dvh] py-16 md:p-0 flex justify-center"
+          class="max-w-5xl mx-auto px-8 lg:px-0 w-full place-content-center grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12"
         >
-          <div
-            class="max-w-screen-lg mx-auto px-8 lg:px-0 w-full place-content-center grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12"
-          >
-            <section class="flex flex-col gap-y-8">
-              <h2 class="text-3xl font-medium">Working Experience</h2>
-              <div class="flex flex-col gap-y-8">
-                <CruzRoja />
-                <Kristall />
-              </div>
-            </section>
-            <section class="flex flex-col gap-y-8">
-              <h2 class="text-3xl font-medium">Open Source Contributions</h2>
-              <div class="flex flex-col gap-y-8">
-                <SuspenseFallbackDebugger />
-                <Svgl />
-              </div>
-            </section>
-          </div>
+          <section class="flex flex-col gap-y-8">
+            <h2 class="text-3xl font-medium">Working Experience</h2>
+            <div class="flex flex-col gap-y-8">
+              <CruzRoja />
+              <Kristall />
+            </div>
+          </section>
+          <section class="flex flex-col gap-y-8">
+            <h2 class="text-3xl font-medium">Open Source Contributions</h2>
+            <div class="flex flex-col gap-y-8">
+              <Plasma />
+              <SuspenseFallbackDebugger />
+              <Svgl />
+            </div>
+          </section>
         </div>
       </div>
       <Projects />
     </div>
   </main>
 </Layout>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const screenHeight = window.outerHeight;
-    const screenWidth = window.innerWidth;
-
-    if (screenWidth >= 640) {
-      return;
-    }
-
-    const experience = document.getElementById("experience");
-    const projects = document.getElementById("projects");
-
-    if (!experience || !projects) return;
-
-    const experienceHeight = experience.offsetHeight;
-
-    const heightDifference = screenHeight + (experienceHeight - screenHeight);
-
-    projects.style.paddingTop = `${heightDifference + 128}px`;
-  });
-</script>
