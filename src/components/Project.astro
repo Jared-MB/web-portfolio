@@ -16,7 +16,8 @@ interface Props {
   };
 }
 
-const { images, badges, description, link, title, github, favicon } = Astro.props;
+const { images, badges, description, link, title, github, favicon } =
+  Astro.props;
 ---
 
 <article class="flex flex-col gap-y-8">
@@ -25,8 +26,8 @@ const { images, badges, description, link, title, github, favicon } = Astro.prop
   >
     <div class="flex gap-x-4 items-center">
       <Image
-        src={favicon?.src ?? '/'}
-        alt={favicon?.alt ?? ''}
+        src={favicon?.src ?? "/"}
+        alt={favicon?.alt ?? ""}
         width={42}
         height={42}
         class="rounded-full aspect-square object-contain"
@@ -62,10 +63,22 @@ const { images, badges, description, link, title, github, favicon } = Astro.prop
       {badges.map((badge) => <Badge>{badge}</Badge>)}
     </div>
     <div class="flex gap-x-4 items-center">
-      <a href={link} target="_blank" class="hover:underline"> Go to website </a>
+      <a
+        href={link}
+        target="_blank"
+        rel="noopener noreferrer"
+        class="hover:underline"
+      >
+        Go to website
+      </a>
       {
         github && (
-          <a href={github} target="_blank">
+          <a
+            href={github}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${title} github repository`}
+          >
             <Github class="w-6 h-6" />
           </a>
         )
