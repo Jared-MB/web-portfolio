@@ -5,16 +5,22 @@ import Github from "../components/svg/Github.astro";
 
 <section
   id="presentation"
-  class="fixed max-w-5xl z-0 px-8 gap-y-12 lg:gap-y-0 lg:px-0 inset-0 mx-auto min-h-screen flex flex-col lg:flex-row items-end justify-center lg:justify-between lg:items-center"
+  class="relative lg:sticky lg:top-0 max-w-5xl z-0 px-8 py-24 lg:py-0 gap-y-12 lg:gap-y-0 lg:px-0 mx-auto lg:h-dvh flex flex-col lg:flex-row items-start justify-center lg:justify-between lg:items-center"
 >
   <article class="flex flex-col gap-y-4">
-    <h1 class="text-8xl lg:text-9xl font-semibold">I'm Jared <br />Muñoz.</h1>
-    <p class="max-w-xl text-2xl">
+    <h1
+      class="text-[clamp(3rem,13vw,8rem)] leading-[1.05] font-semibold text-balance"
+    >
+      I'm Jared <br />Muñoz.
+    </h1>
+    <p class="max-w-xl text-lg sm:text-xl lg:text-2xl">
       <strong>Design Engineer & DX.</strong> Building products people love to use,
       and developers want to work with.
     </p>
   </article>
-  <aside class="flex flex-col items-end gap-x-8 gap-y-8 mr-6 lg:mr-0">
+  <aside
+    class="self-end lg:self-auto flex flex-col items-end gap-x-8 gap-y-8 mr-6 lg:mr-0"
+  >
     <a
       href="https://jared-mb.kristall.app/Jared%20Mu%C3%B1oz%20-%20CV.pdf"
       target="_blank"

@@ -103,3 +103,41 @@ body {
 p {
   text-wrap: pretty;
 }
+
+/* ---------------------------------------------------------------------------
+   Parallax del Acto 3 (Proyectos), solo desktop ≥1024px.
+
+   Coreografía por scroll (en múltiplos de la altura de viewport, 1vp = 100vh):
+     [0vp, 1vp] -> la Experiencia sube sobre la Presentación.
+     [1vp, 2vp] -> la Experiencia queda fija (se lee).
+     [2vp, 3vp] -> la Experiencia se desliza fuera; Proyectos queda inmóvil.
+     [3vp, ...] -> Proyectos hace su propio scroll.
+
+   Proyectos vive en el flujo a 3vp. Para mantenerlo "fijo" arriba durante el
+   destape y soltarlo después, lo desplazamos con translateY: de -200vh (2
+   viewports arriba, oculto tras la Experiencia) a 0, justo en el rango de
+   scroll [100vh, 300vh]. Al ir sobre el compositor (animation-timeline:
+   scroll()) queda sincronizado con el scroll nativo: sin temblor.
+
+   Navegadores sin scroll-driven animations (p. ej. Safari actual) ignoran la
+   animación y Proyectos simplemente fluye normal (degradación elegante).
+--------------------------------------------------------------------------- */
+@media (min-width: 1024px) {
+  @keyframes projects-reveal {
+    from {
+      transform: translateY(-200vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @supports (animation-timeline: scroll()) {
+    #projects-act {
+      animation: projects-reveal linear both;
+      animation-timeline: scroll(root block);
+      animation-range: 100vh 300vh;
+      will-change: transform;
+    }
+  }
+}

@@ -13,18 +13,25 @@ import Bonampak from "../components/Bonampak.astro";
 ---
 
 <Layout title="Jared Muñoz | Portfolio">
-  <main>
+  <main class="lg:relative">
+    {/* Acto 1: la Presentación queda fija (sticky) al fondo mientras la
+        Experiencia sube por encima. */}
     <Presentation />
-    <div class="relative top-[100dvh]">
+
+    {/* Acto 2: la Experiencia se fija a pantalla completa y, gracias al
+        espaciador, se mantiene fija un tramo de scroll y luego se desliza
+        hacia arriba saliendo de la pantalla, revelando los Proyectos que ya
+        esperan detrás. Va por encima de todo (z-20). */}
+    <div class="lg:relative lg:z-20">
       <div
         id="experience"
-        class="relative z-20 bg-input min-h-dvh py-16 md:p-0 flex justify-center"
+        class="relative z-20 bg-input lg:h-dvh lg:overflow-hidden pt-10 pb-20 lg:p-0 flex justify-center lg:sticky lg:top-0"
       >
         <div
           class="max-w-5xl mx-auto px-8 lg:px-0 w-full place-content-center grid grid-cols-1 lg:grid-cols-2 gap-x-16 gap-y-12"
         >
           <section class="flex flex-col gap-y-8">
-            <h2 class="text-3xl font-medium">Working Experience</h2>
+            <h2 class="text-2xl sm:text-3xl font-medium">Working Experience</h2>
             <div class="flex flex-col gap-y-8">
               <CruzRoja />
               <Bonampak />
@@ -32,7 +39,7 @@ import Bonampak from "../components/Bonampak.astro";
             </div>
           </section>
           <section class="flex flex-col gap-y-8">
-            <h2 class="text-3xl font-medium">Open Source Contributions</h2>
+            <h2 class="text-2xl sm:text-3xl font-medium">Open Source Contributions</h2>
             <div class="flex flex-col gap-y-8">
               <Plasma />
               <SuspenseFallbackDebugger />
@@ -41,6 +48,18 @@ import Bonampak from "../components/Bonampak.astro";
           </section>
         </div>
       </div>
+      {/* Espaciador (solo desktop): aporta la distancia de scroll para que la
+          Experiencia permanezca fija y luego se deslice fuera de pantalla. */}
+      <div class="hidden lg:block h-dvh pointer-events-none" aria-hidden="true">
+      </div>
+    </div>
+
+    {/* Acto 3: los Proyectos (z-10) esperan detrás de la Experiencia. La
+        animación dirigida por scroll (en global.css, #projects-act) los
+        mantiene fijos arriba mientras la Experiencia se desliza fuera y, en
+        cuanto desaparece, los suelta para que hagan su propio scroll. Va sobre
+        el compositor (sin jitter) y en unidades vh (relativo). */}
+    <div id="projects-act" class="lg:relative lg:z-10">
       <Projects />
     </div>
   </main>
