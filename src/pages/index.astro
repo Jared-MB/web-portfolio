@@ -13,7 +13,36 @@ import Bonampak from "../components/Bonampak.astro";
 ---
 
 <Layout title="Jared Muñoz | Portfolio">
-  <main class="lg:relative">
+  <main class="relative">
+    {/* Aviso de migración: absoluto para no alterar la coreografía de scroll
+        (los rangos en vh de global.css); se va con el scroll y la Experiencia
+        lo cubre al subir. */}
+    <aside
+      class="absolute inset-x-0 top-0 z-10 bg-foreground text-background"
+      aria-label="Site announcement"
+    >
+      <p
+        class="max-w-5xl mx-auto px-8 lg:px-0 py-3 text-sm text-center sm:text-left"
+      >
+        I'm moving this site to a more interactive version built with
+        <a
+          href="https://github.com/Jared-MB/dayos"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-semibold underline underline-offset-4 decoration-background/40 hover:decoration-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background rounded-sm transition-[text-decoration-color]"
+          translate="no"
+        >DayOS</a>.
+        See
+        <a
+          href="https://desktop.jared-mb.dev"
+          class="font-semibold underline underline-offset-4 decoration-background/40 hover:decoration-background focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-background rounded-sm whitespace-nowrap transition-[text-decoration-color]"
+          translate="no"
+        >
+          desktop.jared-mb.dev&nbsp;→
+        </a>
+      </p>
+    </aside>
+
     {/* Acto 1: la Presentación queda fija (sticky) al fondo mientras la
         Experiencia sube por encima. */}
     <Presentation />
